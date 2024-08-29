@@ -2,86 +2,58 @@
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/sass.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./src/img/icons/favicon.svg"
+      sizes="16x16"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SASS Tutorial template</title>
+    <title>SASS code</title>
   </head>
   <body>
-    <div class="wrapper">
-      <main class="main">
-        <div class="container">
-          <a
-            class="main-logo"
-            href="https://sass-lang.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              class="main-logo-img"
-              src="/src/img/logo-sass.png"
-              alt="Sass logo"
-              width="360"
-              height="360"
-            />
-          </a>
+    <div class="notification-primary">
+      <svg class="notification-btn-icon" width="16" height="16">
+        <use href="./src/img/icons/danger.svg"></use>
+      </svg>
 
-          <h1 class="main-title title">
-            <span>Sass</span> <br />simple starter
-            <a
-              class="main-title-link"
-              href="https://github.com/goitacademy/vite-sass-app-template"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              template
-            </a>
-          </h1>
+      <p class="notification-text">Primary</p>
 
-          <ul class="main-badges badges">
-            <li class="badges-item">
-              <a class="badges-link" href="https://vitejs.dev/" target="_blank">Vite</a>
-            </li>
-            <li class="badges-item">
-              <a
-                class="badges-link"
-                href="https://elad2412.github.io/the-new-css-reset/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                The New CSS Reset
-              </a>
-            </li>
-            <li class="badges-item">
-              <a
-                class="badges-link"
-                href="https://www.npmjs.com/package/autoprefixer"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Autoprefixer
-              </a>
-            </li>
-            <li class="badges-item">
-              <a
-                class="badges-link"
-                href="https://www.npmjs.com/package/postcss-sort-media-queries"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                postcss-sort-media-queries
-              </a>
-            </li>
-          </ul>
-        </div>
-      </main>
-      <footer class="footer">
-        <div class="container">
-          Made with ❤ by
-          <a href="https://goit.global/ua/" target="_blank" rel="noopener noreferrer"> GoIT </a>
-        </div>
-      </footer>
+      <button class="notification-btn" aria-label="Close button">
+        <svg class="notification-btn-icon" width="16" height="16">
+          <use href="./src/img/icons/close.svg"></use>
+        </svg>
+      </button>
     </div>
 
+    <div class="notification-success">
+      <svg class="notification-icon" width="20" hidden="20">
+        <use href="./src/img/icons/check.svg"></use>
+      </svg>
+
+      <p class="notification-text">Success</p>
+
+      <button class="notification-btn" aria-label="Close button">
+        <svg class="notification-btn-icon" width="16" height="16">
+          <use href="./src/img/icons/close.svg"></use>
+        </svg>
+      </button>
+    </div>
+
+    <div class="notificatio-info">
+      <svg class="notification-icon" width="20" hidden="20">
+        <use href="./src/img/icons/check.svg"></use>
+      </svg>
+
+      <p class="notification-text">Info</p>
+
+      <button class="notification-btn" aria-label="Close button">
+        <svg class="notification-btn-icon" width="16" height="16">
+          <use href="./src/img/icons/info.svg"></use>
+        </svg>
+      </button>
+    </div>
+    <!-- connect to style.scss -->
     <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>

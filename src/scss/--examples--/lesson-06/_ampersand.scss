@@ -1,0 +1,58 @@
+// .link {
+//   color: black;
+//   // "&" символ амперсанд -  дозволяє вказати місце куди підставити батьковський селектор
+//   &:hover,
+//   &:focus {
+//     color: red;
+//   }
+// }
+
+// вкладемо селектор стану в link
+// .link:hover {
+//   color: red;
+// }
+// .link:focus {
+//   color: red;
+// }
+
+//  button
+.button {
+  // властивість що має набір підвластивостей
+  background: teal {
+    position: center;
+    repeat: no-repeat;
+  }
+  // color: red;
+
+  &:hover,
+  &:focus {
+    color: blue;
+  }
+}
+
+//  icon
+.button-icon {
+  width: 20px;
+  height: 20px;
+
+  &:hover {
+    width: 50px;
+    height: 50px;
+  }
+
+  // перед амперсандом (&) стоїть батьківський елемент — button в стані hover, а після нього вказана конкатенація, яка підставляє клас дитини .button-icon після батька. Проте амперсанд (&) у цьому випадку може бути записаний тільки разом з пробілом перед ним.
+
+  // застосувати правило до елементу .button-icon, який є нащадком классу .button, але лише при стані (батька = .button) hover
+  .button:hover & {
+    font-size: 20px;
+  }
+}
+
+// label
+.button-label {
+  font-size: 16px;
+
+  .button:hover & {
+    font-size: 20px;
+  }
+}

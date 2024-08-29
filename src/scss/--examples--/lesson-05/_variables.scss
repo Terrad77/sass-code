@@ -1,0 +1,23 @@
+// kebab-case notation
+// $color-primary-text: #888;
+// $color-blue-text: lightblue;
+
+// camelCase
+// $colorPrimaryText: #888;
+// $colorBlueText: lightblue;
+
+// snake_case
+// $color_primary_text: #888;
+// $color_blue_text: lightblue;
+
+$font-size: 16px;
+
+.title {
+  font-size: $font-size;
+}
+
+$font-size: 10px;
+
+.subtitle {
+  font-size: $font-size;
+}
