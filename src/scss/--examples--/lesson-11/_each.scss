@@ -1,8 +1,8 @@
-// @each at-rule with list
+// @each at-rule with list - цикл, який виконає тіло директиви для кожного значення зі списку чи мапи.
 $sizes: 8, 16, 20;
 
 @each $size in $sizes {
-  .p-#{$size} {
+  .paddimg-#{$size} {
     padding: #{$size}px;
   }
 }

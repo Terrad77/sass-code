@@ -1,21 +1,30 @@
-@use "sass:list";
+@use "sass:list"; // імпорт модуля списків
 
-// List examples
-$list: 8, 10, 12, 14, 16;
+// типи даних у SASS
+$number: 12; //числа
+$string: "grid"; // рядки
+$boolean: false; //булеві значення thruthy & falsy
+$empty: null; // відсутніст значення
+$list: 8, 10, 12, 14, 16; //списки (послідовність даних, що відокремлені комою або пробілом) списки в SASS - immutable, всі ф-ції що опрацьовують їх завжди повертають копію списку
 
 $list: 1px solid red;
 
-// list.nth() function
+// list.nth() function - (n-й) ф-ція, що дістає зі списку данні за вказанним номером  (у SASS нумерація починається з 1)
 $numbers: 10px, 12px, 16px;
-@debug list.nth($numbers, 2); // 12px
 
-// list.length() function
+@debug list.nth($numbers, 2);
+//де "list" - namespace, "$numbers" - список, "2" - порядковий номер елемента списку з початку, це виводе =>  list.scss:14 Debug: 12px
+
+@debug list.nth($numbers, -3);
+//(як що значення від'ємне "-3" то виводе з кінця)
+
+// list.length() function -довжина списку
 $colors: lightgreen, tomato, lightblue;
 @debug list.length($colors); // 3
 
-// use list with @each
+// use list with @each - ітеруватись по списку і генерувати стилі для кожного елемента
 $sizes: 40px, 50px, 80px;
-
+// кожен розмір в розмірах
 @each $size in $sizes {
   .icon-#{$size} {
     font-size: $size;
@@ -30,12 +39,13 @@ $button-types: ".btn-sm", ".btn-md", ".btn-lg", ".btn-xl";
 @mixin btn-size($types) {
   @for $i from 1 through list.length($types) {
     #{list.nth($types, $i)} {
-      $factor: ($i * 5 - 5);
+      //(1й парам- список, 2й парам- номер елемента списку)
+      $factor: ($i * 5 - 5); // factor - змінна для нарощування
 
       padding: (5px + $factor) (10px + $factor);
       border-radius: (10px + $factor);
     }
   }
 }
-
+// виклик
 @include btn-size($button-types);

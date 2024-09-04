@@ -1,18 +1,36 @@
 // Function statement
-@use "sass:math";
+@use "sass:math"; // імпорт модулю для використання math.
 
 @function strip-unit($value) {
+  // додавання перевірки, чи value є числом
+
   @if type-of($value) != "number" {
     @error "#{$value} is not a number.";
   }
 
+  // перевірка, чи value є числом та містить одиниці виміру
+  // unitless - вбудована ф-ція SASS, що перевіряє чи є у значення одиниці виміру та повертає boolean
   @if type-of($value) == "number" and not unitless($value) {
+    // part1
+    // $result: $value * 0;
+    // @debug $result; // execution tracing functions.scss:15 Debug: 0px
+
+    // part2
+    // $result: $result + 1;
+    // @debug $result; // execution tracing functions.scss:18 Debug: 1px
+
     @return math.div($value, ($value * 0 + 1));
   }
 
+  //з функції обов'язково щось повертати
   @return $value;
 }
 
+//виклик функції у debug
+@debug strip-unit(24px); // functions.scss:17 Debug: 24px
+// @debug strip-unit(24px/1px); //px буде спрощено: functions.scss:23 Debug: 24
+
+// ф-ція для обчислення в rem (відносні параметри)
 @function rem($px-value, $base-font-size: 16px) {
   @return #{math.div(strip-unit($px-value), strip-unit($base-font-size))}rem;
 }

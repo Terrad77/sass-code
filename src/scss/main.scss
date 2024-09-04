@@ -20,9 +20,9 @@
 // @use "--examples--/lesson-09/extend";
 
 // Examples lesson 10
-@use "base/fonts";
+// @use "base/fonts";
 // @use "components/button";
-@use "--examples--/lesson-10/mixins";
+// @use "--examples--/lesson-10/mixins";
 
 // Examples lesson 11
 // @use "base/fonts";
@@ -39,9 +39,9 @@
 // @use "--examples--/lesson-13/list";
 
 // Examples lesson 14
-// @use "--examples--/lesson-14/map";
-// @use "--examples--/lesson-14/alerts";
+@use "--examples--/lesson-14/map";
+@use "--examples--/lesson-14/alerts";
 
 /* == END == default styles for body == */
 // default styles for body
-// @use "--examples--/lesson-05/base";
+@use "--examples--/lesson-05/base";

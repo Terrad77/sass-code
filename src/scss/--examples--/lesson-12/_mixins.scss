@@ -1,4 +1,4 @@
-@use "decimal" as *;
+@use "decimal" as *; // import module "_decimal" from the some folder
 @use "functions" as *;
 
 @mixin fonts($fs, $fw: null, $lh: null, $ls: null, $align: null) {
